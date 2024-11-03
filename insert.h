@@ -117,7 +117,7 @@ void door() {
 			int password;
 			printf("비밀번호를 입력하세요 : ");
 			scanf("%d", &password);
-			if (password == 1234) {
+			if (password == 723) {
 				printf("문이 열렸다!\n");
 				phase = 1;
 			}
