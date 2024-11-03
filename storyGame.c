@@ -8,38 +8,49 @@
 #include <conio.h>
 #include <time.h>
 
-
-
-
-
-
-
-
-
-
-
+int phase=0;
 int main(void) {
-	int n;
+    int n;
 
 
 
-	startStory();
-	do {
-		printf("ÃµÀå¿£ ¼¼°³ÀÇ Àü±¸µéÀÌ ±ôºıÀÌ¸ç ºûÀ» ºñÃß°í ÀÖ¾ú´Ù.\n\n1. Ä§´ë¸¦ Á¶»çÇÑ´Ù\n\n2. Ã¥»óÀ» Á¶»çÇÑ´Ù.\n\n3. ¹®À» Á¶»çÇÑ´Ù\n\n4. ¾òÀº Á¤º¸¸¦ È®ÀÎÇÑ´Ù.\n\n0. Á¾·á\n");
-		n = select();
+    startStory();
+    do {
+        system("cls");
+        if (phase == 1) {
+            system("cls");   break;
+        }
+        printf("ì²œì¥ì—” ì„¸ê°œì˜ ì „êµ¬ë“¤ì´ ê¹œë¹¡ì´ë©° ë¹›ì„ ë¹„ì¶”ê³  ìˆì—ˆë‹¤.\n\n1. ì¹¨ëŒ€ë¥¼ ì¡°ì‚¬í•œë‹¤\n\n2. ì±…ìƒì„ ì¡°ì‚¬í•œë‹¤.\n\n3. ë¬¸ì„ ì¡°ì‚¬í•œë‹¤.\n\n4. ì–»ì€ ì •ë³´ë¥¼ í™•ì¸í•œë‹¤.\n\n0. ì¢…ë£Œ\n\n");
+        n = select();
 
-		switch (n) {
-
-		case 1: bed();              system("pause");	system("cls");		break;
-		case 2: desk();             system("pause");	system("cls");		break;
-		case 3: door();             system("pause");	system("cls");		break;
-		case 4: obtain();           system("pause");	system("cls");		break;
-		case 0: printf("Á¾·áµÇ¾ú½À´Ï´Ù.\n");		break;
-		default:	 printf("Àß¸øÀÔ·ÂÇÏ¿´½À´Ï´Ù.\n\n"); system("pause");	system("cls");
-		}
-	} while (n != 0);
-
+        switch (n) {
+        case 1: bed();              system("pause");	system("cls");		break;
+        case 2: desk();             system("pause");	system("cls");		break;
+        case 3: door();             system("pause");	system("cls");		break;
+        case 4: obtain();           system("pause");	system("cls");		break;
+        case 0: printf("ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.\n");		break;
+        default:	 printf("ì˜ëª»ì…ë ¥í•˜ì˜€ìŠµë‹ˆë‹¤.\n\n"); system("pause");	system("cls");
+        }
+    } while (n != 0);
 
 
-	return 0;
+
+
+    if (phase == 1) {
+        do {
+            printf("ì´ì œ ì–´ë””ë¡œ ì´ë™í• ê¹Œ.\n\n1. ì™¼ìª½ìœ¼ë¡œ ê°„ë‹¤.\n\n2. ì˜¤ë¥¸ìª½ìœ¼ë¡œ ê°„ë‹¤.\n\n3. ì—°êµ¬ì›ë“¤ì—ê²Œ ë§ì„ ê±´ë‹¤.\n\n4. ì–»ì€ ì •ë³´ë¥¼ í™•ì¸í•œë‹¤.\n\n0. ì¢…ë£Œ\n\n");
+            n = select();
+
+            switch (n) {
+            case 1: left();              system("pause");	system("cls");		break;
+            case 2: right();             system("pause");	system("cls");		break;
+            case 3: researcher();        system("pause");	system("cls");		break;
+            case 4: obtain();            system("pause");	system("cls");		break;
+            case 0: printf("ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤.\n");		break;
+            default:	 printf("ì˜ëª»ì…ë ¥í•˜ì˜€ìŠµë‹ˆë‹¤.\n\n"); system("pause");	system("cls");
+            }
+        } while (n != 0);
+
+        return 0;
+    }
 }
