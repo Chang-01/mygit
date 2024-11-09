@@ -11,8 +11,8 @@
 
 int select();
 void error();
-void slow_print(const char* str, int delay_ms);
-void delay(int milliseconds);
+void slow_print(const char* str, int delay_ms);   //출력할 텍스트와 지연 시간
+void delay(int milliseconds);                     //밀리초 단위 설정위한 함수 이건 위 함수를 위한 함수라 사용 x
 void obtain();
 
 
