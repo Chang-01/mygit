@@ -25,7 +25,7 @@ void right_2();
 void right_3();
 void researcher();
 void startStory2();
-void researcher_1();
+void researcher_file();
 
 
 int key_1, key_2, key_3, key_4, key_5, key_6;
@@ -173,14 +173,14 @@ void error() {
 }
 
 void startStory2() {
-	printf("문을 열고 밖을 살펴보니 연구원으로 보이는 사람이 멀리 보이고 있었다.\n\n");
-	printf("직감을 통해 저 사람에게 걸리지 않는 것이 좋겠다고 생각했다.\n");
+	printf("문을 열고 밖을 내다보니, 저 멀리 연구원인 듯한 사람이 엎드린 채 잠들어 있는 모습이 눈에 들어왔다.\n\n");
+	printf("이상하게도, 본능적으로 저 사람에게 들키지 않는 편이 좋겠다는 생각이 들었다.\n\n");
 }
 
 void left() {
 	system("cls");
 	int x;
-	printf("\"왼쪽에 가기로 마음먹었다.\n걸리지 않도록 주의하며 가다보니 연구실로 보이는 방이 보인다\n들어가 볼까?\"\n");
+	printf("\"왼쪽에 가기로 마음먹었다.\n왼쪽엔 또 다른 문이 있었고 밖은 어디론가 통하는 복도였다\n들어가 볼까?\"\n");
 	printf("1. 들어간다.\n\n2. 다시 돌아가자 \n");
 	x = select();
 	if (x == 1) left_1();
@@ -249,7 +249,7 @@ void right_1() {
 void right_2() {
 	system("cls");
 	key_5 = 1;
-	printf("누군가 돌아오기 전에 서둘러 서류들을 살펴본다. \n서류들 사이에서 카드키로 보이는 물건을 챙길 수 있었다.\n\n");
+	printf("누군가 돌아오기 전에 서둘러 서류들을 살펴본다.\n\n");
 
 }
 
@@ -260,22 +260,22 @@ void right_3() {
 
 }
 
-// 연구실 가운 소지시 추가 내용 
+
 void researcher() {
 	system("cls");
 	int x;
-	printf("\"당황스러운 상황의 연속이다 보니 이제는 지쳐간다.\n답답함을 느낀 나머지 나는 저 연구원에게 직접 말을 걸기로 했다.\n\n");
-	printf("1. 연구원에게 말을 걸러간다.\n\n2. 다시 돌아가자\n");
+	printf("\"자고있는 연구원이 깨지 않게 조심스럽게 다가갔다.\n연구원이 엎드린 책상위에는 실험보고서라고 적힘 파일들과 그 옆엔 카드키가 놓여있었다.\n\n");
+	printf("1. 파일을 살펴본다.\n\n2. 카드키를 챙긴다.\n\n3. 연구원에게 말을 건다.\n\n");
 	x = select();
-	if (x == 1) researcher_1();
+	if (x == 1) researcher_file();
 	else if (x == 2) {
 		printf("\"아무리 생각해도 가둬둔 사람과 연관있는 사람에게 말을 거는 것은 아닌 것 같다.\"");
 	}
 	else error();
 }
 
-void researcher_1() {
+void researcher_file() {
 	system("cls");
 	int x;
-	printf("\"연구원에게 다가가니 연구원은 잠을 오래 못잤는지 상태가 이상해 보인다..\n무엇을 물어보면 좋을까?.\"\n");
+	printf("\".\"\n");
 }
