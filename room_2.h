@@ -1,7 +1,9 @@
+#define _CRT_SECURE_NO_WARNINGS
 #pragma once
-//µÎ¹øÂ° ¹æ ÅØ½ºÆ® Ãâ·ÂÀ» À§ÇÑ Çì´õÆÄÀÏ
+//ë‘ë²ˆì§¸ ë°© í…ìŠ¤íŠ¸ ì¶œë ¥ì„ ìœ„í•œ í—¤ë”íŒŒì¼
 
 #include "insert.h"
+#include "ending.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -21,52 +23,60 @@ void startStory2();
 void researcher_file();
 
 
-
-extern int key_1, key_2, key_3, key_4; //Ã¹¹øÂ° ¹æ¿¡¼­ ¾òÀº ÈùÆ®
-int key_5, key_6;                       //µÎ¹øÂ° ¹æ¿¡¼­ ¾òÀº ÈùÆ®
-void startStory2() {
-	printf("¹®À» ¿­°í ¹ÛÀ» ³»´Ùº¸´Ï, Àú ¸Ö¸® ¿¬±¸¿øÀÎ µíÇÑ »ç¶÷ÀÌ ¾þµå¸° Ã¤ Àáµé¾î ÀÖ´Â ¸ð½ÀÀÌ ´«¿¡ µé¾î¿Ô´Ù.\n\n");
-	printf("ÀÌ»óÇÏ°Ôµµ, º»´ÉÀûÀ¸·Î Àú »ç¶÷¿¡°Ô µéÅ°Áö ¾Ê´Â ÆíÀÌ ÁÁ°Ú´Ù´Â »ý°¢ÀÌ µé¾ú´Ù.\n\n");
+extern int phase;
+extern int key_1, key_2, key_3, key_4; //ì²«ë²ˆì§¸ ë°©ì—ì„œ ì–»ì€ ížŒíŠ¸
+int key_5, key_6;                       //ë‘ë²ˆì§¸ ë°©ì—ì„œ ì–»ì€ ížŒíŠ¸
+void startStory_2() {
+	printf("ë¬¸ì„ ì—´ê³  ë°–ì„ ë‚´ë‹¤ë³´ë‹ˆ, ì € ë©€ë¦¬ ì—°êµ¬ì›ì¸ ë“¯í•œ ì‚¬ëžŒì´ ì—Žë“œë¦° ì±„ ìž ë“¤ì–´ ìžˆëŠ” ëª¨ìŠµì´ ëˆˆì— ë“¤ì–´ì™”ë‹¤.\n\n");
+	printf("ì´ìƒí•˜ê²Œë„, ë³¸ëŠ¥ì ìœ¼ë¡œ ì € ì‚¬ëžŒì—ê²Œ ë“¤í‚¤ì§€ ì•ŠëŠ” íŽ¸ì´ ì¢‹ê² ë‹¤ëŠ” ìƒê°ì´ ë“¤ì—ˆë‹¤.\n\n");
 }
 
 
 void left() {
 	system("cls");
 	int x;
-	printf("\"¿ÞÂÊ¿¡ °¡±â·Î ¸¶À½¸Ô¾ú´Ù.\n¿ÞÂÊ¿£ ¶Ç ´Ù¸¥ ¹®ÀÌ ÀÖ¾ú°í ¹ÛÀº ¾îµð·Ð°¡ ÅëÇÏ´Â º¹µµ¿´´Ù\nµé¾î°¡ º¼±î?\"\n");
-	printf("1. µé¾î°£´Ù.\n\n2. ´Ù½Ã µ¹¾Æ°¡ÀÚ \n");
+	printf("\"ì™¼ìª½ì— ê°€ê¸°ë¡œ ë§ˆìŒë¨¹ì—ˆë‹¤.\nì™¼ìª½ì—” ë˜ ë‹¤ë¥¸ ë¬¸ì´ ìžˆì—ˆê³  ë°–ì€ ì–´ë””ë¡ ê°€ í†µí•˜ëŠ” ë³µë„ì˜€ë‹¤\në“¤ì–´ê°€ ë³¼ê¹Œ?\"\n");
+	printf("1. ë“¤ì–´ê°„ë‹¤.\n\n2. ë‹¤ì‹œ ëŒì•„ê°€ìž \n");
 	x = select();
 	if (x == 1) left_1();
 	else if (x == 2) {
-		printf("\"³ª´Â ´Ù¸¥ ÂÊÀ¸·Î °¡ºÁ¾ß °Ú´Ù°í »ý°¢ÇÏ¸ç ´Ù½Ã ¿Ô´ø ±æÀ» µ¹¾Æ°£´Ù.\"");
+		printf("\"ë‚˜ëŠ” ë‹¤ë¥¸ ìª½ìœ¼ë¡œ ê°€ë´ì•¼ ê² ë‹¤ê³  ìƒê°í•˜ë©° ë‹¤ì‹œ ì™”ë˜ ê¸¸ì„ ëŒì•„ê°„ë‹¤.\"");
 	}
 	else error();
 }
 
 void left_1() {
 	system("cls");
-	if (key_5 == 0) {
-		printf("\"¿ª½Ã³ª ¹®ÀÌ Àá°ÜÀÖ´Ù. Ä«µå Å°°¡ ÇÊ¿äÇÑ °ÍÀ¸·Î º¸ÀÎ´Ù.\"\n");
-		printf("¼±ÅÃÁö·Î µ¹¾Æ°©´Ï´Ù\n");
-	}
-	else if (key_5 == 1) {
-		int x;
-		printf("ÀÎ½ÄµÇ´Â ¼Ò¸®¿Í ÇÔ²² ¹®ÀÌ ¿­·È´Ù.\n\n"); // ¿¬±¸½Ç¿¡ ÀÖ´Â ´Ü¼­µé Ãß°¡ 
-		printf("1. ´Ü¼­¸¦ ´õ Ã£¾Æº»´Ù\n\n");
-		printf("2. ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇÑ´Ù\n\n");
-		x = select();
-		if (x == 1) {
-			printf("´Ù¸¥ ´Ü¼­µéÀ» ´õ Ã£¾Æº¸ÀÚ.\n");
-			system("pause");
-			system("cls");
-			return;
-		}
-		else if (x == 2) {
-			printf("¹®ÀÌ ¿­·È´Ù!\n");
+	printf("ì—­ì‹œë‚˜ ë¬¸ì´ ìž ê²¨ìžˆë‹¤. \në¹„ë°€ë²ˆí˜¸ê°€ í•„ìš”í•œ ê²ƒìœ¼ë¡œ ë³´ì¸ë‹¤.\n\n");
+	printf("1. ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ë³¸ë‹¤.\n2. ë‹¤ì‹œ ëŒì•„ê°„ë‹¤.\n\n");
+	int x;
+	x = select();
+	int password = 0;
+
+	if ((x == 1) && (key_5 == 1)) {
+		system("cls");
+		printf("\"ì—­ì‹œë‚˜ ë¬¸ì´ ìž ê²¨ìžˆë‹¤. ë¹„ë°€ë²ˆí˜¸ê°€ í•„ìš”í•œ ê²ƒìœ¼ë¡œ ë³´ì¸ë‹¤. ì•„ë§ˆ ë©”ëª¨ìž¥ì˜ ë‹¨ì–´ì˜ íšìˆ˜ì™€ ê´€ë ¨ìžˆì§€ ì•Šì„ê¹Œ?\"\n");
+		printf("\në¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ë³´ìž.\n");
+		scanf("%d", &password);
+		if (password == 8443) {
+			printf("ë¬¸ì´ ì—´ë ¸ë‹¤!");
+
+			if (key_6 == 0) {
+				bad_ending_1();
+			}
+			else {
+				printf("ì—°êµ¬ì› ì˜·ìž…ê³  íƒˆì¶œí•¨");//ì˜·ìž…ê³  íƒˆì¶œí•œ ìƒíƒœ(ì—°êµ¬ì› ì˜·)
+			}
 		}
 		else {
-			printf("ºñ¹Ð¹øÈ£°¡ Æ²¸° °Í °°´Ù.\n");
+			printf("\në¹„ë°€ë²ˆí˜¸ê°€ í‹€ë ¸ë‹¤.");
 		}
+
+	}
+	else if (x == 1) {
+
+		printf("\"\në¹„ë°€ë²ˆí˜¸ê°€ í•„ìš”í•œ ê²ƒìœ¼ë¡œ ë³´ì¸ë‹¤. ë‹¨ì„œë¥¼ ëª¨ì•„ë³´ìž\"");
+
 	}
 	else {
 		error();
@@ -77,12 +87,12 @@ void left_1() {
 void right() {
 	system("cls");
 	int x;
-	printf("\"¿À¸¥ÂÊÀ¸·Î °¡±â·Î ¸¶À½¸Ô¾ú´Ù.\n°É¸®Áö ¾Êµµ·Ï ÁÖÀÇÇÏ¸ç °¡´Ùº¸´Ï ÈÞ°Ô½Ç·Î º¸ÀÌ´Â ¹æÀÌ º¸ÀÎ´Ù.\nµé¾î°¡ º¼±î?\"\n");
-	printf("1. µé¾î°£´Ù.\n\n2. ´Ù½Ã µ¹¾Æ°¡ÀÚ \n");
+	printf("\"ì˜¤ë¥¸ìª½ìœ¼ë¡œ ê°€ê¸°ë¡œ ë§ˆìŒë¨¹ì—ˆë‹¤.\nê±¸ë¦¬ì§€ ì•Šë„ë¡ ì£¼ì˜í•˜ë©° ê°€ë‹¤ë³´ë‹ˆ íœ´ê²Œì‹¤ë¡œ ë³´ì´ëŠ” ë°©ì´ ë³´ì¸ë‹¤.\në“¤ì–´ê°€ ë³¼ê¹Œ?\"\n");
+	printf("1. ë“¤ì–´ê°„ë‹¤.\n\n2. ë‹¤ì‹œ ëŒì•„ê°€ìž \n");
 	x = select();
 	if (x == 1) right_1();
 	else if (x == 2) {
-		printf("\"³ª´Â ´Ù¸¥ ÂÊÀ¸·Î °¡ºÁ¾ß °Ú´Ù°í »ý°¢ÇÏ¸ç ´Ù½Ã ¿Ô´ø ±æÀ» µ¹¾Æ°£´Ù.\"");
+		printf("\"ë‚˜ëŠ” ë‹¤ë¥¸ ìª½ìœ¼ë¡œ ê°€ë´ì•¼ ê² ë‹¤ê³  ìƒê°í•˜ë©° ë‹¤ì‹œ ì™”ë˜ ê¸¸ì„ ëŒì•„ê°„ë‹¤.\"");
 	}
 	else error();
 }
@@ -90,8 +100,8 @@ void right() {
 void right_1() {
 	system("cls");
 	int x;
-	printf("\"ÈÞ°Ô½Ç¿¡ µé¾î°¡º¸´Ï Å¹ÀÚ À§¿¡ ¼­·ùµé°ú ´©±º°¡ ¸Ô´Ù ³²±ä °£´ÜÇÑ °úÀÚ¿Í Ä¿ÇÇ°¡ º¸ÀÎ´Ù.\n¼ÒÆÄ¿¡´Â ¿¬±¸½Ç °¡¿îÀÌ ³õ¿©Á® ÀÖ¾ú´Ù.\"\n");
-	printf("1. Å¹ÀÚ À§¸¦ À¯½ÉÈ÷ »ìÆìº»´Ù\n\n2. ¿¬±¸½Ç °¡¿îÀ» Ã¬±ä´Ù\n");
+	printf("\"íœ´ê²Œì‹¤ì— ë“¤ì–´ê°€ë³´ë‹ˆ íƒìž ìœ„ì— ì„œë¥˜ë“¤ê³¼ ëˆ„êµ°ê°€ ë¨¹ë‹¤ ë‚¨ê¸´ ê°„ë‹¨í•œ ê³¼ìžì™€ ì»¤í”¼ê°€ ë³´ì¸ë‹¤.\nì†ŒíŒŒì—ëŠ” ì—°êµ¬ì‹¤ ê°€ìš´ì´ ë†“ì—¬ì ¸ ìžˆì—ˆë‹¤.\"\n");
+	printf("1. íƒìž ìœ„ë¥¼ ìœ ì‹¬ížˆ ì‚´íŽ´ë³¸ë‹¤\n\n2. ì—°êµ¬ì‹¤ ê°€ìš´ì„ ì±™ê¸´ë‹¤\n");
 	x = select();
 	if (x == 1) right_2();
 	else if (x == 2)right_3();
@@ -101,7 +111,7 @@ void right_1() {
 void right_2() {
 	system("cls");
 	key_5 = 1;
-	printf("´©±º°¡ µ¹¾Æ¿À±â Àü¿¡ ¼­µÑ·¯ ¼­·ùµéÀ» »ìÆìº»´Ù.\n\n");
+	printf("ëˆ„êµ°ê°€ ëŒì•„ì˜¤ê¸° ì „ì— ì„œë‘˜ëŸ¬ ì„œë¥˜ë“¤ì„ ì‚´íŽ´ë³¸ë‹¤.\n\n");
 
 }
 
@@ -109,7 +119,7 @@ void right_2() {
 void right_3() {
 	system("cls");
 	key_6 = 1;
-	printf("¾Æ±îºÎÅÍ º¸ÀÌ´Â ¿¬±¸¿øµéÀ» »ý°¢ÇÏ¸é À¯¿ëÇÏ°Ô »ç¿ëÇÒ ¼ö ÀÖÀ» °Í °°´Ù.\n ¿¬±¸½Ç °¡¿îÀ» ¼­µÑ·¯ °ÉÄ£ »óÅÂ·Î ÀÚ¸®¸¦ ¶á´Ù.\n\n");
+	printf("ì•„ê¹Œë¶€í„° ë³´ì´ëŠ” ì—°êµ¬ì›ë“¤ì„ ìƒê°í•˜ë©´ ìœ ìš©í•˜ê²Œ ì‚¬ìš©í•  ìˆ˜ ìžˆì„ ê²ƒ ê°™ë‹¤.\n ì—°êµ¬ì‹¤ ê°€ìš´ì„ ì„œë‘˜ëŸ¬ ê±¸ì¹œ ìƒíƒœë¡œ ìžë¦¬ë¥¼ ëœ¬ë‹¤.\n\n");
 
 }
 
@@ -117,24 +127,25 @@ void right_3() {
 void researcher() {
 	system("cls");
 	int x;
-	printf("\"ÀÚ°íÀÖ´Â ¿¬±¸¿øÀÌ ±úÁö ¾Ê°Ô Á¶½É½º·´°Ô ´Ù°¡°¬´Ù.\n¿¬±¸¿øÀÌ ¾þµå¸° Ã¥»óÀ§¿¡´Â ½ÇÇèº¸°í¼­¶ó°í ÀûÈû ÆÄÀÏµé°ú ±× ¿·¿£ Ä«µåÅ°°¡ ³õ¿©ÀÖ¾ú´Ù.\n\n");
-	printf("1. ÆÄÀÏÀ» »ìÆìº»´Ù.\n\n2. Ä«µåÅ°¸¦ Ã¬±ä´Ù.\n\n3. ¿¬±¸¿ø¿¡°Ô ¸»À» °Ç´Ù.\n\n");
+	printf("\"ìžê³ ìžˆëŠ” ì—°êµ¬ì›ì´ ê¹¨ì§€ ì•Šê²Œ ì¡°ì‹¬ìŠ¤ëŸ½ê²Œ ë‹¤ê°€ê°”ë‹¤.\nì—°êµ¬ì›ì´ ì—Žë“œë¦° ì±…ìƒìœ„ì—ëŠ” ì‹¤í—˜ë³´ê³ ì„œë¼ê³  ì íž˜ íŒŒì¼ë“¤ê³¼ ê·¸ ì˜†ì—” ë©”ëª¨ìž¥ì´ ë†“ì—¬ìžˆì—ˆë‹¤.\n\n");
+	printf("1. íŒŒì¼ì„ ì‚´íŽ´ë³¸ë‹¤.\n\n2. ë©”ëª¨ìž¥ì„ ë³¸ë‹¤..\n\n3. ì—°êµ¬ì›ì—ê²Œ ë§ì„ ê±´ë‹¤.\n\n");
 	x = select();
 	if (x == 1) researcher_file();
 	else if (x == 2) {
-		printf("\"¾Æ¹«¸® »ý°¢ÇØµµ °¡µÖµÐ »ç¶÷°ú ¿¬°üÀÖ´Â »ç¶÷¿¡°Ô ¸»À» °Å´Â °ÍÀº ¾Æ´Ñ °Í °°´Ù.\"");
+		system("cls");
+		printf("\"ë©”ëª¨ìž¥ì„ ë³¸ë‹¤. ë©”ëª¨ìž¥ì—ëŠ” \"ë¼ì§€ê³ ê¸°\"ë¼ëŠ” ê¸€ìžê°€ ì í˜€ìžˆë‹¤. ë¹„ë°€ë²ˆí˜¸ì™€ ì—°ê´€ì´ ìžˆì„ê¹Œ?");
+		key_5 = 1;
 	}
 	else error();
 }
 
 
 
-
 void researcher_file() {
 	system("cls");
-	const char* text = "\"ÀÌ°Ç¡¦ ¹¹Áö? ÀÌ µÎ²¨¿î ÆÄÀÏ, ½ÇÇè º¸°í¼­¶ó´Ï. Ç¥Áö¿¡ ¾²¿© ÀÖ´Â °Ç¡¦ ¡®±â¾ï Á¶ÀÛ ¹× Á¦¾î ½ÇÇè' ? ¹«½¼ ¼Ò¸®Áö? ³» ±â¾ï°ú °ü·ÃÀÌ ÀÖ´Â °Ç°¡? ¿Ö ÀÌ°Ô ¿©±â ÀÖ´Â °ÅÁö¡¦? ³» ¸Ó¸´¼ÓÀÌ È¥¶õ½º·¯¿öÁø´Ù.ÀÌ°É ³»°¡ ÀÐ¾î¾ß ÇÏ´Â °É±î ? ¡¦µÎ·ÆÁö¸¸, ´Ù°¡°¡¼­ ÆÄÀÏÀ» ÆîÄ£´Ù.\"\n";
-	int delay = 70;
+	const char* text = "\"ì´ê±´â€¦ ë­ì§€? ì´ ë‘êº¼ìš´ íŒŒì¼, ì‹¤í—˜ ë³´ê³ ì„œë¼ë‹ˆ. í‘œì§€ì— ì“°ì—¬ ìžˆëŠ” ê±´â€¦ â€˜ê¸°ì–µ ì¡°ìž‘ ë° ì œì–´ ì‹¤í—˜' ? ë¬´ìŠ¨ ì†Œë¦¬ì§€? ë‚´ ê¸°ì–µê³¼ ê´€ë ¨ì´ ìžˆëŠ” ê±´ê°€? ì™œ ì´ê²Œ ì—¬ê¸° ìžˆëŠ” ê±°ì§€â€¦? ë‚´ ë¨¸ë¦¿ì†ì´ í˜¼ëž€ìŠ¤ëŸ¬ì›Œì§„ë‹¤.ì´ê±¸ ë‚´ê°€ ì½ì–´ì•¼ í•˜ëŠ” ê±¸ê¹Œ ? â€¦ë‘ë µì§€ë§Œ, ë‹¤ê°€ê°€ì„œ íŒŒì¼ì„ íŽ¼ì¹œë‹¤.\"\n";
+	int delay = 10;
 	slow_print(text, delay);
-	text = "\"ÇÇ½ÇÇèÃ¼ X¡¦ ÀÌ°Ô ³ª¶ó°í ? ¿¬±¸¼ÒÀÇ ÇÇ½ÇÇèÃ¼¶ó´Ï¡¦ ? ±â¾ïÀ» Á¦°ÅÇÏ°í »õ·Î¿î ±â¾ïÀ» ÁÖÀÔÇÏ´Â ½ÇÇè¿¡ ³»°¡ Âü¿©Çß´Ù´Â ¶æÀÎ°¡ ? ¡¦Àá±ñ, ³»°¡ ¿ø·¡ ÀÌ ¿¬±¸¼ÒÀÇ ¿¬±¸¿øÀÌ¾ú´Ü ¸»ÀÎ°¡ ? \"ÇÑµ¿¾È ¸»µµ ¾È µÈ´Ù°í ºÎÁ¤ÇÏ·Á ÇÏÁö¸¸, ±â¾ïÀÇ Á¶°¢µéÀÌ ¾î·ÅÇ²ÀÌ ¶°¿À¸£±â ½ÃÀÛÇÑ´Ù.¿¹Àü¿¡ ³»°¡ ÀÌ ¿¬±¸¼Ò¿¡¼­ ÀÏÇß°í, ¹º°¡¸¦¡¦ ¹º°¡ Å« ºñ¹ÐÀ»¡¦ Æø·ÎÇÏ·Á´Ù¡¦ ±×¶§ ³» ±â¾ïÀ» Á¶ÀÛ´çÇß¾î.";
+	text = "\"í”¼ì‹¤í—˜ì²´ Xâ€¦ ì´ê²Œ ë‚˜ë¼ê³  ? ì—°êµ¬ì†Œì˜ í”¼ì‹¤í—˜ì²´ë¼ë‹ˆâ€¦ ? ê¸°ì–µì„ ì œê±°í•˜ê³  ìƒˆë¡œìš´ ê¸°ì–µì„ ì£¼ìž…í•˜ëŠ” ì‹¤í—˜ì— ë‚´ê°€ ì°¸ì—¬í–ˆë‹¤ëŠ” ëœ»ì¸ê°€ ? â€¦ìž ê¹, ë‚´ê°€ ì›ëž˜ ì´ ì—°êµ¬ì†Œì˜ ì—°êµ¬ì›ì´ì—ˆë‹¨ ë§ì¸ê°€ ? \"í•œë™ì•ˆ ë§ë„ ì•ˆ ëœë‹¤ê³  ë¶€ì •í•˜ë ¤ í•˜ì§€ë§Œ, ê¸°ì–µì˜ ì¡°ê°ë“¤ì´ ì–´ë ´í’‹ì´ ë– ì˜¤ë¥´ê¸° ì‹œìž‘í•œë‹¤.ì˜ˆì „ì— ë‚´ê°€ ì´ ì—°êµ¬ì†Œì—ì„œ ì¼í–ˆê³ , ë­”ê°€ë¥¼â€¦ ë­”ê°€ í° ë¹„ë°€ì„â€¦ í­ë¡œí•˜ë ¤ë‹¤â€¦ ê·¸ë•Œ ë‚´ ê¸°ì–µì„ ì¡°ìž‘ë‹¹í–ˆì–´.";
 	slow_print(text, delay);
 }
