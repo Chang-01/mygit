@@ -12,7 +12,7 @@
 int select();
 void error();
 void slow_print(const char* str, int delay_ms);   //출력할 텍스트와 지연 시간.
-void delay(int milliseconds);                     //밀리초 단위 설정위한 함수 이건 위 함수를 위한 함수라 사용 x
+void delay_(int milliseconds);                     //밀리초 단위 설정위한 함수 이건 위 함수를 위한 함수라 사용 x
 void obtain();
 
 
@@ -52,7 +52,7 @@ void obtain() {
 		printf("-책상 위에서 얻은 열쇠이다.\n\n");
 	}
 	if (key_5 == 1) {
-		printf("-책상 위에서 얻은 카드키이다..\n\n");
+		printf("-책상 위에서 얻은 메모장이다.  돼지고기라는 단어가 적혀있다.\n\n");
 	}
 	if (key_6 == 1) {
 		printf("-소파에서 얻은 가운이다.\n\n");
@@ -60,7 +60,7 @@ void obtain() {
 
 }
 
-void delay(int milliseconds) {
+void delay_(int milliseconds) {
 	clock_t start_time = clock();
 	// 지정한 밀리초만큼 대기
 	while (clock() < start_time + milliseconds * (CLOCKS_PER_SEC / 1000));
@@ -70,10 +70,8 @@ void slow_print(const char* str, int delay_ms) {
 	while (*str) {
 		putchar(*str);    // 한 글자 출력
 		fflush(stdout);   // 버퍼 비우기 (바로 출력)
-		delay(delay_ms);  // 지연 시간 설정
+		delay_(delay_ms);  // 지연 시간 설정
 		str++;
 	}
 	putchar('\n');  // 줄바꿈
-}
-	printf("\".\"\n");
 }
