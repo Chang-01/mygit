@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #pragma once
 
-//Ã¹¹øÂ° ¹æ ÅØ½ºÆ® Ãâ·ÂÀ» À§ÇÑ Çì´õÆÄÀÏ
+//ì²«ë²ˆì§¸ ë°© í…ìŠ¤íŠ¸ ì¶œë ¥ì„ ìœ„í•œ í—¤ë”íŒŒì¼
 
 #include "insert.h"
 #include <stdio.h>
@@ -20,29 +20,29 @@ void desk_1();
 void desk_2();
 void door();
 
-int key_1, key_2, key_3, key_4, key_5, key_6;
+int key_1, key_2, key_3, key_4;
 extern int phase;
 
-void startStory() {
-	printf("ÀÒ¾î¹ö¸° ±â¾ï\n\n");
-	printf("¿£ÅÍÅ°¸¦ ´­·¯ ½ÃÀÛÇØÁÖ¼¼¿ä...\n");
+void startStory_1() {
+	printf("ìžƒì–´ë²„ë¦° ê¸°ì–µ\n\n");
+	printf("ì—”í„°í‚¤ë¥¼ ëˆŒëŸ¬ ì‹œìž‘í•´ì£¼ì„¸ìš”...\n");
 	getchar();
 
-	printf("´«À» ¶á ¼ø°£, ÃµÀå¿¡¼­ Èñ¹ÌÇÏ°Ô ±ô¹ÚÀÌ´Â Àü±¸°¡ º¸¿´´Ù. ¸Ó¸®°¡ Áö²ö°Å¸®¸ç »ý°¢ÀÌ È¥¶õ½º·¯¿ü´Ù. \n");
-	printf("¿©±â¼­ ¹«½¼ ÀÏÀÌ ÀÖ¾ú´ø °É±î? ³ª´Â ¿Ö ¿©±â ÀÖ´Â °É±î? ¹æ ¾È¿¡´Â Ä§´ë¿Í ÀÛÀº Ã¥»ó, ±×¸®°í ¹®ÀÌ ÀÖ¾ú´Ù.\n");
-	printf("µÎ¸®¹ø°Å¸®´Â »çÀÌ, ¹® µÚÂÊ¿¡¼­ µé¸®´Â ¹Ì¹¦ÇÑ ¼Ò¸®¿¡ ¸öÀÌ ¿òÂñÇß´Ù. ÂÑ±â´Â µíÇÑ ´À³¦¿¡ »¡¸® ÀÌ°÷¿¡¼­ ¹þ¾î³ª¾ß ÇÑ´Ù´Â º»´ÉÀûÀÎ °æ°í°¡ ¶°¿Ã¶ú´Ù.\n\n");
+	printf("ëˆˆì„ ëœ¬ ìˆœê°„, ì²œìž¥ì—ì„œ í¬ë¯¸í•˜ê²Œ ê¹œë°•ì´ëŠ” ì „êµ¬ê°€ ë³´ì˜€ë‹¤. ë¨¸ë¦¬ê°€ ì§€ëˆê±°ë¦¬ë©° ìƒê°ì´ í˜¼ëž€ìŠ¤ëŸ¬ì› ë‹¤. \n");
+	printf("ì—¬ê¸°ì„œ ë¬´ìŠ¨ ì¼ì´ ìžˆì—ˆë˜ ê±¸ê¹Œ? ë‚˜ëŠ” ì™œ ì—¬ê¸° ìžˆëŠ” ê±¸ê¹Œ? ë°© ì•ˆì—ëŠ” ì¹¨ëŒ€ì™€ ìž‘ì€ ì±…ìƒ, ê·¸ë¦¬ê³  ë¬¸ì´ ìžˆì—ˆë‹¤.\n");
+	printf("ë‘ë¦¬ë²ˆê±°ë¦¬ëŠ” ì‚¬ì´, ë¬¸ ë’¤ìª½ì—ì„œ ë“¤ë¦¬ëŠ” ë¯¸ë¬˜í•œ ì†Œë¦¬ì— ëª¸ì´ ì›€ì°”í–ˆë‹¤. ì«“ê¸°ëŠ” ë“¯í•œ ëŠë‚Œì— ë¹¨ë¦¬ ì´ê³³ì—ì„œ ë²—ì–´ë‚˜ì•¼ í•œë‹¤ëŠ” ë³¸ëŠ¥ì ì¸ ê²½ê³ ê°€ ë– ì˜¬ëžë‹¤.\n\n");
 }
 
 
 void bed() {
 	system("cls");
 	int x;
-	printf("\"Ä§´ë ¾Æ·¡¸¦ ¼ÕÀ¸·Î ´õµë¾î º¸´Ï ¼Õ³¡¿¡ Á¾ÀÌ°¡ ´ê¾Ò´Ù.³°Àº ½Å¹® ÇÑ ÀåÀÌ¾ú´Ù.\n½Å¹®Àº ¿À·¡µÈ »ç°Ç ±â»ç·Î µÚµ¤¿© ÀÖ¾ú´Âµ¥, ÇÑ ³²ÀÚ°¡ ¹üÁË ÇøÀÇ·Î °æÂû¿¡ ÂÑ±â°í ÀÖ´Ù´Â ³»¿ëÀÌ¾ú´Ù.\n±×ÀÇ »çÁøÀ» º¸´Â ¼ø°£, ÀÌ»óÇÏ°Ô ÀÍ¼÷ÇÑ ´À³¦ÀÌ µé¾ú´Ù.\"\n");
-	printf("1. ½Å¹®À» ÀÐ´Â´Ù\n\n2. ½Å¹®À» ¹«½ÃÇÏ°í ´Ù¸¥ °÷À» Á¶»çÇÑ´Ù\n");
+	printf("\"ì¹¨ëŒ€ ì•„ëž˜ë¥¼ ì†ìœ¼ë¡œ ë”ë“¬ì–´ ë³´ë‹ˆ ì†ëì— ì¢…ì´ê°€ ë‹¿ì•˜ë‹¤.ë‚¡ì€ ì‹ ë¬¸ í•œ ìž¥ì´ì—ˆë‹¤.\nì‹ ë¬¸ì€ ì˜¤ëž˜ëœ ì‚¬ê±´ ê¸°ì‚¬ë¡œ ë’¤ë®ì—¬ ìžˆì—ˆëŠ”ë°, í•œ ë‚¨ìžê°€ ë²”ì£„ í˜ì˜ë¡œ ê²½ì°°ì— ì«“ê¸°ê³  ìžˆë‹¤ëŠ” ë‚´ìš©ì´ì—ˆë‹¤.\nê·¸ì˜ ì‚¬ì§„ì„ ë³´ëŠ” ìˆœê°„, ì´ìƒí•˜ê²Œ ìµìˆ™í•œ ëŠë‚Œì´ ë“¤ì—ˆë‹¤.\"\n");
+	printf("1. ì‹ ë¬¸ì„ ì½ëŠ”ë‹¤\n\n2. ì‹ ë¬¸ì„ ë¬´ì‹œí•˜ê³  ë‹¤ë¥¸ ê³³ì„ ì¡°ì‚¬í•œë‹¤\n");
 	x = select();
 	if (x == 1) bed_1();
 	else if (x == 2) {
-		printf("\"³ª´Â ´õ ÀÌ»ó º¼ ÇÊ¿ä°¡ ¾ø´Ù°í ÆÇ´ÜÇÏ°í ´Ù¸¥ °÷À» µÑ·¯º¸±â·Î Çß´Ù.¿ØÁö ¸ð¸£°Ô ´õ ±ÞÇÑ ÀÏÀÌ »ý±æ °Í¸¸ °°Àº ºÒ±æÇÑ ¿¹°¨ÀÌ µé¾ú´Ù.\"");
+		printf("\"ë‚˜ëŠ” ë” ì´ìƒ ë³¼ í•„ìš”ê°€ ì—†ë‹¤ê³  íŒë‹¨í•˜ê³  ë‹¤ë¥¸ ê³³ì„ ë‘˜ëŸ¬ë³´ê¸°ë¡œ í–ˆë‹¤.ì™ ì§€ ëª¨ë¥´ê²Œ ë” ê¸‰í•œ ì¼ì´ ìƒê¸¸ ê²ƒë§Œ ê°™ì€ ë¶ˆê¸¸í•œ ì˜ˆê°ì´ ë“¤ì—ˆë‹¤.\"");
 	}
 	else error();
 }
@@ -50,13 +50,13 @@ void bed() {
 void bed_1() {
 	system("cls");
 	int x;
-	printf("\"½Å¹®À» ÀÐ¾î ³»·Á°¡´Ï, ³²ÀÚÀÇ ÀÌ¸§ÀÌ ³» ÀÌ¸§°ú °°´Ù´Â °ÍÀ» ±ú´Ý°í Ãæ°ÝÀ» ¹Þ´Â´Ù.\n±â»ç¿¡´Â ±×°¡ ½Å¿øÀ» °¨Ãß°í µµ¸Á´Ù´Ï¸ç °í±Þ Á¤º¸µéÀ» ÈÉÃÆ´Ù´Â ³»¿ëÀÌ ÀÖ¾ú°í, ¸¶Áö¸·À¸·Î ±×°¡ Æ¯Á¤ Àå¼Ò¿¡¼­ ¸ñ°ÝµÇ¾ú´Ù°í ¾²¿© ÀÖ¾ú´Ù. \nÀÌ Á¤º¸´Â ³»°¡ ¿Ö ÀÌ ¹æ¿¡ °¤Çô ÀÖ´ÂÁö¿¡ ´ëÇÑ ´Ü¼­°¡ µÉ °Í °°¾Ò´Ù.\"\n\n");
+	printf("\"ì‹ ë¬¸ì„ ì½ì–´ ë‚´ë ¤ê°€ë‹ˆ, ë‚¨ìžì˜ ì´ë¦„ì´ ë‚´ ì´ë¦„ê³¼ ê°™ë‹¤ëŠ” ê²ƒì„ ê¹¨ë‹«ê³  ì¶©ê²©ì„ ë°›ëŠ”ë‹¤.\nê¸°ì‚¬ì—ëŠ” ê·¸ê°€ ì‹ ì›ì„ ê°ì¶”ê³  ë„ë§ë‹¤ë‹ˆë©° ê³ ê¸‰ ì •ë³´ë“¤ì„ í›”ì³¤ë‹¤ëŠ” ë‚´ìš©ì´ ìžˆì—ˆê³ , ë§ˆì§€ë§‰ìœ¼ë¡œ ê·¸ê°€ íŠ¹ì • ìž¥ì†Œì—ì„œ ëª©ê²©ë˜ì—ˆë‹¤ê³  ì“°ì—¬ ìžˆì—ˆë‹¤. \nì´ ì •ë³´ëŠ” ë‚´ê°€ ì™œ ì´ ë°©ì— ê°‡í˜€ ìžˆëŠ”ì§€ì— ëŒ€í•œ ë‹¨ì„œê°€ ë  ê²ƒ ê°™ì•˜ë‹¤.\"\n\n");
 	key_1 = 1;
-	printf("1.Ä§´ë¸¦ ´õ Å½»öÇÑ´Ù\n\n2.¹æÀ» ¸¶Àú µÑ·¯º»´Ù.\n");
+	printf("1.ì¹¨ëŒ€ë¥¼ ë” íƒìƒ‰í•œë‹¤\n\n2.ë°©ì„ ë§ˆì € ë‘˜ëŸ¬ë³¸ë‹¤.\n");
 	x = select();
 	system("cls");
 	if (x == 1) {
-		printf("\"Ä§´ë ¹Ø¿¡ ´Ù½Ã ¼ÕÀ» ³Ö¾î ÃµÃµÈ÷ ÁÖº¯À» »ìÆìº¸´Ï, ÀÛ°í ³ì½¼ »óÀÚ°¡ ÀÖ¾ú´Ù. »óÀÚ¸¦ ¿­ÀÚ ³°Àº Èæ¹é »çÁøÀÌ ³ª¿Ô´Ù. \n»çÁø ¼Ó¿¡´Â ÀþÀº ¿©¼ºÀÌ ³» ¾î±ú¿¡ ÆÈÀ» ¿Ã¸®°í ¿ô°í ÀÖ¾ú´Ù. »çÁøÀ» º¸ÀÚ ¸Ó¸®°¡ ¾ÆÇÁ¸é¼­ Èå¸´ÇÏ°Ô³ª¸¶ ±â¾ïÀÇ ÇÑ Á¶°¢ÀÌ ¶°¿Ã¶ú´Ù. \nÀÌ ¿©¼ºÀº ³ª¿Í °¡±î¿î »çÀÌ¿´´ø »ç¶÷ °°¾Ò´Ù.\"\n");
+		printf("\"ì¹¨ëŒ€ ë°‘ì— ë‹¤ì‹œ ì†ì„ ë„£ì–´ ì²œì²œížˆ ì£¼ë³€ì„ ì‚´íŽ´ë³´ë‹ˆ, ìž‘ê³  ë…¹ìŠ¨ ìƒìžê°€ ìžˆì—ˆë‹¤. ìƒìžë¥¼ ì—´ìž ë‚¡ì€ í‘ë°± ì‚¬ì§„ì´ ë‚˜ì™”ë‹¤. \nì‚¬ì§„ ì†ì—ëŠ” ì Šì€ ì—¬ì„±ì´ ë‚´ ì–´ê¹¨ì— íŒ”ì„ ì˜¬ë¦¬ê³  ì›ƒê³  ìžˆì—ˆë‹¤. ì‚¬ì§„ì„ ë³´ìž ë¨¸ë¦¬ê°€ ì•„í”„ë©´ì„œ íë¦¿í•˜ê²Œë‚˜ë§ˆ ê¸°ì–µì˜ í•œ ì¡°ê°ì´ ë– ì˜¬ëžë‹¤. \nì´ ì—¬ì„±ì€ ë‚˜ì™€ ê°€ê¹Œìš´ ì‚¬ì´ì˜€ë˜ ì‚¬ëžŒ ê°™ì•˜ë‹¤.\"\n");
 		key_2 = 1;
 	}
 }
@@ -65,8 +65,8 @@ void desk() {
 	system("cls");
 
 	int x;
-	printf("\"Ã¥»ó À§¿¡´Â ¿­¼è¿Í ´ÙÀÌ¾î¸®°¡ ÀÖ¾ú´Ù, ´ÙÀÌ¾î¸®´Â ³°°í ³Ê´ú³Ê´úÇß´Ù.´ÙÀÌ¾î¸®¸¦ ÆîÃÄº¸´Ï ±Û¾¾°¡ ÀÜ¶à ÀûÇô ÀÖ¾ú°í, ÆäÀÌÁö¸¶´Ù ´©±º°¡ ±ÞÇÏ°Ô ¾´ µíÇÑ ÈçÀûÀÌ ³²¾Æ ÀÖ¾ú´Ù.\n³»¿ëÀº ¾Ë ¼ö ¾ø´Â ¹®ÀÚ¿Í ¼ýÀÚµéÀÌ ¼¯¿© ÀÖ¾ú°í, ±ºµ¥±ºµ¥ '¼û°Ü¾ß ÇÑ´Ù'¶ó´Â ¹®±¸°¡ ¹Ýº¹ÀûÀ¸·Î ³ªÅ¸³µ´Ù.\"\n");
-	printf("1. ´ÙÀÌ¾î¸®¿¡¼­ Æ¯Á¤ ´Ü¾î¿Í ¹®ÀåÀ» ÁÖÀÇ ±í°Ô º»´Ù.\n\n2. ¹«½ÃÇÏ°í ¿­¼è¸¦ Áý´Â´Ù\n");
+	printf("\"ì±…ìƒ ìœ„ì—ëŠ” ì—´ì‡ ì™€ ë‹¤ì´ì–´ë¦¬ê°€ ìžˆì—ˆë‹¤, ë‹¤ì´ì–´ë¦¬ëŠ” ë‚¡ê³  ë„ˆëœë„ˆëœí–ˆë‹¤.ë‹¤ì´ì–´ë¦¬ë¥¼ íŽ¼ì³ë³´ë‹ˆ ê¸€ì”¨ê°€ ìž”ëœ© ì í˜€ ìžˆì—ˆê³ , íŽ˜ì´ì§€ë§ˆë‹¤ ëˆ„êµ°ê°€ ê¸‰í•˜ê²Œ ì“´ ë“¯í•œ í”ì ì´ ë‚¨ì•„ ìžˆì—ˆë‹¤.\në‚´ìš©ì€ ì•Œ ìˆ˜ ì—†ëŠ” ë¬¸ìžì™€ ìˆ«ìžë“¤ì´ ì„žì—¬ ìžˆì—ˆê³ , êµ°ë°êµ°ë° 'ìˆ¨ê²¨ì•¼ í•œë‹¤'ë¼ëŠ” ë¬¸êµ¬ê°€ ë°˜ë³µì ìœ¼ë¡œ ë‚˜íƒ€ë‚¬ë‹¤.\"\n");
+	printf("1. ë‹¤ì´ì–´ë¦¬ì—ì„œ íŠ¹ì • ë‹¨ì–´ì™€ ë¬¸ìž¥ì„ ì£¼ì˜ ê¹Šê²Œ ë³¸ë‹¤.\n\n2. ë¬´ì‹œí•˜ê³  ì—´ì‡ ë¥¼ ì§‘ëŠ”ë‹¤\n");
 	x = select();
 	if (x == 1) desk_1();
 	else if (x == 2)desk_2();
@@ -76,45 +76,45 @@ void desk() {
 void desk_1() {
 	system("cls");
 	key_3 = 1;
-	printf("¾î¶°ÇÑ ½ÇÇè¿¡ ´ëÇÑ ³»¿ëÀÎ °Í °°´Ù. ½ÇÇèÀÌ 7¿ù 23ÀÏ¿¡ ½ÃÀÛµÇ¾ú´Ù°í ÀûÇôÀÖ´Ù. \nºü¸£°Ô ±â¾ï µÐ ´ÙÀ½, ´ÙÀÌ¾î¸®¸¦ µ¤¾ú´Ù.\n\n");
+	printf("ì–´ë– í•œ ì‹¤í—˜ì— ëŒ€í•œ ë‚´ìš©ì¸ ê²ƒ ê°™ë‹¤. ì‹¤í—˜ì´ 7ì›” 23ì¼ì— ì‹œìž‘ë˜ì—ˆë‹¤ê³  ì í˜€ìžˆë‹¤. \në¹ ë¥´ê²Œ ê¸°ì–µ ë‘” ë‹¤ìŒ, ë‹¤ì´ì–´ë¦¬ë¥¼ ë®ì—ˆë‹¤.\n\n");
 
 }
 
 void desk_2() {
 	system("cls");
 	key_4 = 1;
-	printf("\"¿­¼è¸¦ È¹µæÇß´Ù. ÀÌ°É·Î ¹®À» ¿­ ¼ö ÀÖÁö ¾ÊÀ»±î?\"\n");
+	printf("\"ì—´ì‡ ë¥¼ íšë“í–ˆë‹¤. ì´ê±¸ë¡œ ë¬¸ì„ ì—´ ìˆ˜ ìžˆì§€ ì•Šì„ê¹Œ?\"\n");
 }
 
 
 void door() {
 	system("cls");
 	if (key_4 == 0) {
-		printf("\"¹®À» ¿­¾îº¸·Á ÇßÀ¸³ª Àá°Ü ÀÖ¾ú´Ù. ³ª´Â ¿­¼è°¡ ÀÖÀ» ¸¸ÇÑ °÷À¸·Î ½Ã¼±À» µ¹·È´Ù. ¹æ¿¡ ÀÖ´Â ¹°°ÇÀ» ´õ ²Ä²ÄÈ÷ »ìÆìºÁ¾ß Çß´Ù.\"\n");
-		printf("¼±ÅÃÁö·Î µ¹¾Æ°©´Ï´Ù\n");
+		printf("\"ë¬¸ì„ ì—´ì–´ë³´ë ¤ í–ˆìœ¼ë‚˜ ìž ê²¨ ìžˆì—ˆë‹¤. ë‚˜ëŠ” ì—´ì‡ ê°€ ìžˆì„ ë§Œí•œ ê³³ìœ¼ë¡œ ì‹œì„ ì„ ëŒë ¸ë‹¤. ë°©ì— ìžˆëŠ” ë¬¼ê±´ì„ ë” ê¼¼ê¼¼ížˆ ì‚´íŽ´ë´ì•¼ í–ˆë‹¤.\"\n");
+		printf("ì„ íƒì§€ë¡œ ëŒì•„ê°‘ë‹ˆë‹¤\n");
 	}
 	else if (key_4 == 1) {
 		int x;
-		printf("¿­¼è´Â µ¹¾Æ°¬Áö¸¸ µµ¾î¶ôÀ¸·Î ÀÌÁß Àá±ÝÀÌ µÅÀÖ¾ú´Ù.\n\n");
-		printf("1. ´Ü¼­¸¦ ´õ Ã£¾Æº»´Ù\n\n");
-		printf("2. ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇÑ´Ù\n\n");
+		printf("ì—´ì‡ ëŠ” ëŒì•„ê°”ì§€ë§Œ ë„ì–´ë½ìœ¼ë¡œ ì´ì¤‘ ìž ê¸ˆì´ ë¼ìžˆì—ˆë‹¤.\n\n");
+		printf("1. ë‹¨ì„œë¥¼ ë” ì°¾ì•„ë³¸ë‹¤\n\n");
+		printf("2. ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•œë‹¤\n\n");
 		x = select();
 		if (x == 1) {
-			printf("´Ù¸¥ ´Ü¼­µéÀ» ´õ Ã£¾Æº¸ÀÚ.\n");
+			printf("ë‹¤ë¥¸ ë‹¨ì„œë“¤ì„ ë” ì°¾ì•„ë³´ìž.\n");
 			system("pause");
 			system("cls");
 			return;
 		}
 		else if (x == 2) {
-			int password;
-			printf("ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
-			scanf("%d", &password);
-			if (password == 723) {
-				printf("¹®ÀÌ ¿­·È´Ù!\n");
+			char password[100];
+			printf("ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš” : ");
+			scanf("%s", &password);
+			if (strcmp(password, "0723") == 0) {
+				printf("ë¬¸ì´ ì—´ë ¸ë‹¤!\n");
 				phase = 1;
 			}
 			else {
-				printf("ºñ¹Ð¹øÈ£°¡ Æ²¸° °Í °°´Ù.\n");
+				printf("ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦° ê²ƒ ê°™ë‹¤.\n");
 				system("pause");
 				system("cls");
 			}
@@ -124,7 +124,4 @@ void door() {
 		}
 	}
 }
-
-
-
 
