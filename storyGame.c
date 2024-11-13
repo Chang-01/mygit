@@ -59,15 +59,16 @@ int main(void) {
         return 0;
     }
 
-    if (phase == 2) {
+      if (phase == 2) {
         startStory_3();
+        int g=0;
         do {
             printf("이제 어디로 이동할까.\n\n1. 정면으로 간다.\n\n2. 여자를 확인한다.\n\n3. 얻은 정보를 확인한다.\n\n0. 종료\n\n");
             n = select();
 
             switch (n) {
             case 1: forward();              system("pause");	system("cls");		break;
-            case 2:              system("pause");	system("cls");		break;
+            case 2: if(g == 0){ girl_first(); g++; }else girl(); system("pause");	system("cls");		break;
             case 3: obtain();            system("pause");	system("cls");		break;
             case 0: printf("종료되었습니다.\n");		break;
             default:	 printf("잘못입력하였습니다.\n\n"); system("pause");	system("cls");
