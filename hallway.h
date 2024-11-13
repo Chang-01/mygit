@@ -2,6 +2,7 @@
 #pragma once
 
 #include "insert.h"
+#include "ending.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -14,9 +15,8 @@ void forward();
 void girl_first();
 void girl();
 
-
-
-extern int key_1, key_2, key_3, key_4,key_5, key_6;
+const char* text;
+extern int key_1, key_2, key_3, key_4, key_5, key_6, key_7, delay;
 int with_girl;
 
 
@@ -29,13 +29,26 @@ void startStory_3() {
 
 
 void forward() {
-
+	system("cls");
+	text = "문은 다행이 잠겨있지 않았다 이대로 얼른 밖으로 나가자.";
+	slow_print(text, delay);
+	printf("\n아무 숫자나 눌러 계속.\n");
+	select();
+	if (key_7 != 1 && with_girl != 1)           normal_ending();
+	else if (key_7 == 1 && with_girl != 1)      bad_ending2();
+	else if (key_7 == 1 && with_girl == 1)      happy_ending1();
+	else if (key_7 != 1 && with_girl == 1)      happy_ending2();
 }
 
 void girl_first() {
 	system("cls");
 	if (key_2 == 1) {
-		printf("\"가까이 다가가자, 그제야 여자가 침대 밑에서 얻은 사진 속 인물이라는 걸 깨달았다. 그 순간 모든 기억이 떠올랐다. 그녀는 나와 함께 진실을 폭로하려던 동료였다.\"");
+		
+		text = "\"가까이 다가가자, 그제야 여자가 침대 밑에서 얻은 사진 속 인물이라는 걸 깨달았다.\"\n";
+		slow_print(text, delay);
+		printf("\n아무 숫자나 눌러 계속.\n");
+		select();
+		girl();
 	}
 	else
 	{
@@ -49,7 +62,12 @@ void girl() {
 		int x;
 		printf("\"비밀번호를 입력해 여자를 구출하자.\"\n\n비밀번호 : \n");
 		x = select();
-	}
+		/*if (x == password){
+			printf("구출하는데 성공했다! \n 하지만 그 모습을 수상하게 본 경비들이 우리를 잡으려 다가온다 얼른 문 밖으로 나가자);
+			with_girl = 1;
+		 }
+		 else error();*/
+		 }
 	else
 	{
 		printf("\"가까이 다가가 얼굴을 확인 해봤지만 누군지 기억이 나지 않는다.. 지금은 탈출이 최우선이다.\"");
